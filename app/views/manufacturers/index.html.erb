@@ -1,0 +1,12 @@
+<h5>List of Manufacturers</h5>
+
+<th>
+  <% @manufacturers.each do |manufacturer| %>
+  <td> Name </td>
+  <td> Country </td>
+</th>
+<tr>
+  <td> <%= manufacturer.name %> </td>
+  <td> <%= manufacturer.country %> </td>
+</tr>
+  <% end %>
