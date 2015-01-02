@@ -17,30 +17,28 @@ So that I can list it in my lot
 
 
   scenario 'with valid data' do
-    car = FactoryGirl.create(:car)
+    manufacturer = FactoryGirl.create(:manufacturer)
     visit '/cars/new'
 
-    fill_in 'Manufacturer', with: car.manufaturer.name
-    fill_in 'Color', with: car.color
-    select(2, :from => "Year")
-    fill_in "Mileage", with: car.mileage
-    fill_in "Description", with: car.description
+    fill_in 'Manufacturer', with: "Porsche"
+    fill_in 'Color', with: "white"
+    select(1960, :from => "Year")
+    fill_in "Mileage", with: 400
+    fill_in "Description", with: "small dents"
 
     click_button 'Add car'
 
     expect(page).to have_content 'New car was successfully added'
-    expect(page).to have_content car.manufacturer.name
-    expect(page).to have_content car.color
+    expect(page).to have_content "Porsche"
+    expect(page).to have_content "white"
   end
 
   scenario 'with invalid data' do
     visit '/cars/new'
-
     click_button 'Add car'
 
     expect(page).to have_content "Manufacturer can't be blank"
     expect(page).to have_content "Color can't be blank"
-    expect(page).to have_content "Year can't be blank"
     expect(page).to have_content "Mileage can't be blank"
 
   end

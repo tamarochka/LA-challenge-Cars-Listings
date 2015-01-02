@@ -13,11 +13,12 @@ FactoryGirl.define do
   end
 
   factory :car do
-    manufacturer 'Porsche'
+    # manufacturer_id 1
     color 'Red'
     year "2014"
-    mileage "20"
+    mileage 20
     description "car description"
+
   end
 
 
