@@ -30,7 +30,6 @@ So that I can keep track of the types of cars found in the lot
 
     click_button 'Create manufacturer'
 
-    expect(page).to have_content "There was a problem"
     expect(page).to have_content "Name can't be blank"
     expect(page).to have_content "Country can't be blank"
 

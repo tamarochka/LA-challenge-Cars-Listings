@@ -1,4 +1,7 @@
 <h5>Add new Manufacturer</h5>
+<% @manufacturer.errors.full_messages.each do |msg| %>
+    <%= msg %>
+<% end %>
   <%= form_for @manufacturer do |f| %>
     <%= f.label :name, 'Name' %>
     <%= f.text_field :name %>
