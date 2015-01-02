@@ -12,4 +12,13 @@ FactoryGirl.define do
     country 'Germany'
   end
 
+  factory :car do
+    manufacturer 'Porsche'
+    color 'Red'
+    year "2014"
+    mileage "20"
+    description "car description"
+  end
+
+
 end
