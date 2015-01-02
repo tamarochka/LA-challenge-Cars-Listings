@@ -4,13 +4,13 @@
 <% end %>
   <%= form_for @car do |f| %>
     <%= f.label :manufacturer_id, 'Manufacturer' %>
-    <%= f.text_field :manufacturer_id %>
+    <%= f.collection_select(:manufacturer_id, Manufacturer.all, :id, :name) %>
 
     <%= f.label :color, 'Color' %>
     <%= f.text_field :color %>
 
     <%= f.label :year %>
-    <%= f.select :year, (1920..2015) %>
+    <%= f.select :year, (1920..2015),include_blank: true %>
 
     <%= f.label :mileage, 'Mileage' %>
     <%= f.text_field :mileage %>

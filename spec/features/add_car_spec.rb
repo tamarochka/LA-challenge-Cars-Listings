@@ -20,7 +20,7 @@ So that I can list it in my lot
     manufacturer = FactoryGirl.create(:manufacturer)
     visit '/cars/new'
 
-    fill_in 'Manufacturer', with: "Porsche"
+    select("Porsche", :from => "Manufacturer")
     fill_in 'Color', with: "white"
     select(1960, :from => "Year")
     fill_in "Mileage", with: 400
@@ -40,6 +40,7 @@ So that I can list it in my lot
     expect(page).to have_content "Manufacturer can't be blank"
     expect(page).to have_content "Color can't be blank"
     expect(page).to have_content "Mileage can't be blank"
+    expect(page).to have_content "Year can't be blank"
 
   end
 end
